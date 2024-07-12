@@ -111,6 +111,12 @@ public class FlatGeobufReader {
 //        System.err.println(headerMeta.offset);
 //        System.err.println(headerMeta.columns);
         
+        // Grösster Problem: Wie finde ich die Grösser des Features heraus ohne es herunterzuladen?
+        // - Man müsste pro gruppierte Feature (sortiert nach index) immer ein den offset des +1 Feature herausfinden.
+        // Noch grösseres Problem ist allerdings, das bereits der Suchindex nicht mit partial requests funktioniert.
+        // -> Ah doch, er kann auch Bytebuffer. Müsste man wohl trotzdem umschreiben
+        
+        
         
 //        int featureSize = data.readInt();
 //        System.err.println("featureSize: " + featureSize);
